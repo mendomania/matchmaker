@@ -1,0 +1,17 @@
+<body>
+  <div id="matchmaker">  
+    <div v-if="stageIntro">
+      <h1>Program Matchmaker</h1>
+      <p>If you're looking to explore adult learning programs offered in Ontario, you've come to the right place!</br>
+         Answer a series of simple questions and we'll recommend programs that best match your situation.</p>
+      <button @click="initQuiz" class="quiz-button btn">Start</button>
+    </div>  
+    <div v-if="stageCards">
+      <card :card="cards[currentCard]" :lang="lang" :dico="dico" v-on:next="nextCard" v-on:back="backCard"></card>
+    </div>   
+  </div>
+</body>
+<script src="vue.js"></script>
+<script src="flow.js"></script>
+<link rel="stylesheet" type="text/css" href="flow.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400">
